@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Karitoy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<section class="whole_page">
+		<section class="left_column">
+			<h1 class="logo_text">Karitoy Online</h1>
+			<h2 class="logo_sub_text">karitoy@gmail.com</h3>
+			<nav class="menu">
+				<ul>
+					<li><%= link_to_unless_current "Home", 								root_url, 														:class=>'left_link' %></li>
+					<li><%= link_to_unless_current "ChariceSpace", 				'http://charicespace.herokuapp.com', 	:class=>'left_link' %></li>
+					<li><%= link_to_unless_current "Pacquiao on 'roids", 	'http://pacroids.herokuapp.com', 			:class=>'left_link' %></li>
+					<li><%= link_to_unless_current "Asian babes", 				'http://asians.herokuapp.com', 				:class=>'left_link' %></li>
+					<li><%= link_to_unless_current "Hitching on Rails", 	hitchrails_url,		 									:class=>'left_link' %></li>
+				</ul>
+			</nav>
+		</section>
+		<section class="right_column">
+			<header class="header_image">
+				<%= image_tag "train.jpg", :width=>750, :height=>100 %>
+			</header>
+			<div class="title_bar">Welcome to my Ruby on Rails projects site</div>
+			<%= yield %>
+			<div class="footer">
+				<div>&copy; Copyright, copyleft and copywrong 2007 Karitoy Online. All rights reserved, conserved and preserved; all wrongs discarded.</div>
+				<!--script language="javascript">date = new Date().toLocaleString(); document.write(date)</script-->
+			</div>
+		</section>
+	</section>
+</body>
+</html>
